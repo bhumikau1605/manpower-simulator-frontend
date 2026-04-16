@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://manpower-simulator-backend.onrender.com/api',
-});
+const BACKEND = 'https://manpower-simulator-backend.onrender.com/api';
+
+const api = axios.create({ baseURL: BACKEND });
+
 
 export const runSimulation  = (data)     => api.post('/simulate', data);
 export const saveScenario   = (data)     => api.post('/scenarios', data);
